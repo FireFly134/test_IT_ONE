@@ -8,7 +8,12 @@ def main(m: list[set[int]]) -> tuple[int, int, float, tuple[int]]:
 
 
 def main_one_line(m: list[set[int]]) -> tuple[int, int, float, tuple[int]]:
-    return sum(map(len, m)), sum(map(sum, m)), sum(num for set_num in m for num in set_num) / sum(map(len, m)) if m else 0, tuple(num for set_num in m for num in set_num)
+    return (
+        sum(map(len, m)),
+        sum(map(sum, m)),
+        sum(num for set_num in m for num in set_num) / sum(map(len, m)) if m else 0,
+        tuple(num for set_num in m for num in set_num),
+    )
 
 
 if __name__ == "__main__":
